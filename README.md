@@ -1,2 +1,4 @@
-# project 7 - react gallery app
+# Project 7 - React Gallery App
  Treehouse FSJS Techdegree Project 7 - React Gallery App
+
+ 
