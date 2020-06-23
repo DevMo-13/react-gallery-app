@@ -12,13 +12,12 @@ class SearchForm extends Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-        
+
+        let topic = this.topic.value;
+        const path = `/search/${topic}`;
+
         this.props.onSearch(this.state.searchTopic);
         this.props.resetLoadState();
-
-        const searchTopic = this.state.searchTopic;
-        const path = `/search/${searchTopic}`;
-
         this.props.history.push(path);
         e.currentTarget.reset();
     };
@@ -30,6 +29,7 @@ class SearchForm extends Component {
                     name="search"
                     placeholder="Search..." 
                     onChange={this.onSearchChange}
+                    ref={(input) => this.topic = input}
                     required/>
                 <button type="submit" className="search-button">
                     <svg fill="#fff" height="24" viewBox="0 0 23 23" width="24" xmlns="http://www.w3.org/2000/svg">
