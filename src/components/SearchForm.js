@@ -1,22 +1,16 @@
-import React, {Component} from 'react';
-import {withRouter} from 'react-router-dom';
+import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 
+// SearchForm component renders the search input field and button,
+// and handles the functionality when a new search topic is submitted.
 class SearchForm extends Component {
-    state = {
-        searchTopic: ''
-    };
-
-    onSearchChange = (e) => {
-        this.setState({searchTopic: e.target.value});
-    };
-
-    onSubmit = (e) => {
+    // Resets the load state to true, updates history, and pushes new url based on search topic.  
+    handleSubmit = (e) => {
         e.preventDefault();
 
-        let topic = this.topic.value;
-        const path = `/search/${topic}`;
+        let searchTopic = this.topic.value;
+        const path = `/search/${searchTopic}`;
 
-        this.props.onSearch(this.state.searchTopic);
         this.props.resetLoadState();
         this.props.history.push(path);
         e.currentTarget.reset();
@@ -24,11 +18,10 @@ class SearchForm extends Component {
 
     render() {
         return (
-            <form className="search-form" onSubmit={this.onSubmit}>
+            <form className="search-form" onSubmit={this.handleSubmit}>
                 <input type="search" 
                     name="search"
                     placeholder="Search..." 
-                    onChange={this.onSearchChange}
                     ref={(input) => this.topic = input}
                     required/>
                 <button type="submit" className="search-button">
