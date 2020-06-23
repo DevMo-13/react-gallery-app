@@ -30,6 +30,12 @@ class App extends Component {
         this.performSearch();
     };
 
+    resetLoadState = () => {
+        this.setState({
+            loading: true
+        });
+    };
+
     defaultSearches = () => {
         const topics = this.state.defaultTopics;
 
@@ -65,7 +71,7 @@ class App extends Component {
         return (
             <BrowserRouter>
             <div className="container">
-                <SearchForm onSearch={this.performSearch} loading={this.state.loading} />
+                <SearchForm onSearch={this.performSearch} resetLoadState={this.resetLoadState} />
                 <Nav />
                 <Switch>
                     <Route exact path="/" render={() => <Redirect to="/mountains" />} />   

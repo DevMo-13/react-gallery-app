@@ -14,6 +14,7 @@ class SearchForm extends Component {
         e.preventDefault();
         
         this.props.onSearch(this.state.searchTopic);
+        this.props.resetLoadState();
 
         const searchTopic = this.state.searchTopic;
         const path = `/search/${searchTopic}`;

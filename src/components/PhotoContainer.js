@@ -7,6 +7,7 @@ class PhotoContainer extends Component {
     render() {
         const data = this.props.data;
         const topic = this.props.topic;
+        const loading = this.props.loading;
         let photos;
     
         if(data.length > 0) {
@@ -17,10 +18,14 @@ class PhotoContainer extends Component {
 
         return(
             <div className="photo-container">
-                {(data.length > 0) ? <h2>{topic}</h2> : null}
-                    <ul>
+                <h2>{topic}</h2>
+                {
+                    (loading) 
+                    ? <h3>Loading...</h3> 
+                    : <ul>
                         {photos}
-                    </ul>
+                      </ul>
+                }
             </div>
         );
     };
