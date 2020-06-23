@@ -1,3 +1,9 @@
+/******************************************
+Treehouse Techdegree:
+FSJS project 7 - React Gallery App
+--aiming for exceeds expectations--
+******************************************/
+
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import SearchForm from './SearchForm';
