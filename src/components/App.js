@@ -40,8 +40,9 @@ class App extends Component {
                 <SearchForm resetLoadState={this.resetLoadState} />
                 <Nav />
                 <Switch>
-                    <Route exact path="/" render={() => <Redirect to="/search/mountains" />} />   
-                    <Route path="/search/:topic" render={() => <PhotoContainer loading={this.state.loading} stopLoading={this.stopLoading} />} />
+                    <Route exact path="/" render={() => <Redirect to="/mountains" />} />   
+                    <Route exact path="/search/:topic" render={() => <PhotoContainer loading={this.state.loading} stopLoading={this.stopLoading} />} />
+                    <Route exact path="/:topic" render={() => <PhotoContainer loading={this.state.loading} stopLoading={this.stopLoading} />} />
                     <Route component={NotFound} />
                 </Switch>
             </div>
