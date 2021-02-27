@@ -3,7 +3,7 @@
 
 Image gallery search app.
 
-Live link to the project can be found here: https://devmo-13.github.io/react-gallery-app/.
+###### Live link to the project can be found here: https://devmo-13.github.io/react-gallery-app/.
 
 ---
 
